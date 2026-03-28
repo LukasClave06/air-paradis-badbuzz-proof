@@ -1,0 +1,28 @@
+# Environnement
+venv/
+venv_deberta/
+venv_deberta_end/
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# MLflow
+mlruns/
+
+# Modèles (IMPORTANT)
+models/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Streamlit cache
+.streamlit/
+
+# fichiers lourds temporaires
+*.zip

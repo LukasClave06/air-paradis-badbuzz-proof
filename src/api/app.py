@@ -1,8 +1,6 @@
 import os
 from flask import Flask, request, jsonify, render_template_string
 
-from src.api.predictor import PredictorConfig, SentimentPredictor
-
 app = Flask(__name__)
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
@@ -27,6 +25,8 @@ UNIT_TEST_MODE = os.environ.get("UNIT_TEST_MODE", "0") == "1"
 
 predictor = None
 if not UNIT_TEST_MODE:
+    from src.api.predictor import PredictorConfig, SentimentPredictor
+
     predictor = SentimentPredictor(
         PredictorConfig(
             model_path=MODEL_PATH,
@@ -64,7 +64,7 @@ HTML = """
 def health():
     return {
         "status": "ok",
-        "model_type": "electra_transformer",
+        "model_type": "electra_transformer" if not UNIT_TEST_MODE else "mock_predictor",
         "unit_test_mode": UNIT_TEST_MODE,
         "model_path": MODEL_PATH,
         "tokenizer_name": TOKENIZER_NAME,

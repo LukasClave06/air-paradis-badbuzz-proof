@@ -1,24 +1,11 @@
-# Core
 numpy==1.26.4
 pandas==2.2.2
-
-# ML / NLP
 scikit-learn==1.5.1
-
-# Transformers
 transformers==4.44.2
 torch==2.3.1
 sentencepiece==0.2.0
-
-# API
+protobuf==5.27.3
 flask==3.0.3
-gunicorn==22.0.0
-
-# Dashboard
 streamlit==1.36.0
-
-# Utils
-python-dotenv==1.0.1
-
-# MLflow (optionnel mais tu l'utilises déjà)
-mlflow==2.14.1
+plotly==6.6.0
+pytest==8.3.2
